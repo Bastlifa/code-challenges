@@ -16,8 +16,6 @@ def num_to_word(num_str):
     
     if num_str == '':
         return []
-    if num_str in cache:
-        return cache[num_str]
 
     num_arr = [int(i) for i in num_str]
     new_words =[]
@@ -25,7 +23,7 @@ def num_to_word(num_str):
     if len(num_arr) == 1:
         for c in digits_to_letters[num_arr[0]]:
             new_words.append(c)
-        cache[num_str] = new_words
+        
         return new_words
         
     for w in num_to_word(num_str[1:]):
@@ -33,7 +31,10 @@ def num_to_word(num_str):
             new_words.append(''.join([c,w]))
             # new_words.append(c + w)
 
-    cache[num_str] = new_words
     return new_words
 
-print(num_to_word('274'))
+# print(num_to_word('523'))
+s = '5235462'
+a = num_to_word(s)
+print(len(a))
+print(f"3**{len(s)} = {3**len(s)}")
