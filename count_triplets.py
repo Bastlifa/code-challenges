@@ -1,3 +1,4 @@
+import math
 def countTriplets(arr, r):
 
     if r == 1:
