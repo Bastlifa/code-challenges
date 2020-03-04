@@ -37,3 +37,4 @@ def countTriplets(arr, r):
             add_or_increase(val_dict, a, 1, 0)
 
     return triplets
+
