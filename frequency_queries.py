@@ -4,7 +4,6 @@ def freqQuery(queries):
     ret_arr = []
 
     def change_freq(v, f, p):
-        # nonlocal freq_dict
         if f in freq_dict:
             freq_dict[f].add(v)
         else:
@@ -15,8 +14,11 @@ def freqQuery(queries):
             freq_dict[p].remove(v)
 
     for q in queries:
+        # query val
         v = None
+        # next frequency
         f = None
+        # previous frequency
         p = None
 
         # Add 1 to frequency
@@ -30,11 +32,9 @@ def freqQuery(queries):
             p = f - 1
             change_freq(v, f, p)
             
-
         # subtract 1 from frequency
         elif q[0] == 2:
             v = q[1]
-            # print('a')
             if v in val_dict and val_dict[v] > 0:
                 p = val_dict[v]
                 f = p - 1
