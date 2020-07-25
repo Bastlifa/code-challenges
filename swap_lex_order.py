@@ -51,3 +51,4 @@ def swapLexOrder(str1, pairs):
             retstrarr[i] = str1[i]
 
     return ''.join(retstrarr)
+
